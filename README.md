@@ -27,7 +27,7 @@ You can see the documentation in the link.
 
 ## Screenshots
 
-<img src="screenshot/wbs-stop.png"><img src="screenshot/wbs-play.png">
+<img src="screenshot/wbs-stop.png"> <img src="screenshot/wbs-play.png">
 
 ## Build
 

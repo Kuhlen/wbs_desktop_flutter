@@ -1,6 +1,7 @@
 # wbs_desktop
 
 Simple Desktop Application to read Serial Communication from RS232 in Windows using Flutter.
+Here I am trying to retrieve weighing data from the Arduino which is plugged into the PC.
 
 ## Getting Started
 
@@ -26,8 +27,7 @@ You can see the documentation in the link.
 
 ## Screenshots
 
-<img src="screenshot/wbs-stop.png">
-<img src="screenshot/wbs-play.png">
+<img src="screenshot/wbs-stop.png"><img src="screenshot/wbs-play.png">
 
 ## Build
 

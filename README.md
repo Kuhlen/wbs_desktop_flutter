@@ -1,16 +1,38 @@
 # wbs_desktop
 
-Simple Desktop Application to read Serial Communication from RS232 in Windows.
+Simple Desktop Application to read Serial Communication from RS232 in Windows using Flutter.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Change the this config in the file `lib\app\modules\home\controllers\serial_controller.dart` to the config you want to read.
 
-A few resources to get you started if this is your first Flutter project:
+```dart
+final _baudrate = 115200;
+void initializeSerialPort() {
+    _port ??= SerialPort("COM5");
+    final config = SerialPortConfig();
+    config.baudRate = _baudrate;
+    config.parity = 0;
+    config.bits = 8;
+    config.stopBits = 1;
+    config.dtr = 1;
+    config.rts = 1;
+    _port!.config = config;
+  }
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+I use the package [flutter_libserialport](https://pub.dev/packages/flutter_libserialport) to read the serial communication.
+You can see the documentation in the link.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshots
+
+<img src="screenshot/wbs-stop.png">
+<img src="screenshot/wbs-start.png">
+
+## Build
+
+If you want to build this project, you can use this command.
+
+```bash
+flutter build windows
+```

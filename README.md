@@ -1,11 +1,13 @@
-# wbs_desktop
+# Weight Scale Desktop App
 
-Simple Desktop Application to read Serial Communication from RS232 in Windows using Flutter.
-Here I am trying to retrieve weighing data from the Arduino which is plugged into the PC.
+This is a simple desktop application that reads data from a weighing scale connected to your computer via RS232. The goal is to retrieve weighing data from an Arduino plugged into the PC.
 
 ## Getting Started
 
-Change the this config in the file `lib\app\modules\home\controllers\serial_controller.dart` to the config you want to read.
+To customize the configuration for reading data, follow these steps:
+
+1. Open the file `lib\app\modules\home\controllers\serial_controller.dart`.
+2. Locate the following code snippet:
 
 ```dart
 final _baudrate = 115200;
@@ -22,8 +24,11 @@ void initializeSerialPort() {
   }
 ```
 
-I use the package [flutter_libserialport](https://pub.dev/packages/flutter_libserialport) to read the serial communication.
-You can see the documentation in the link.
+3. Adjust the configuration values according to your needs.
+
+## Dependencies
+
+This project utilizes the [flutter_libserialport](https://pub.dev/packages/flutter_libserialport) package to handle serial communication. Refer to the package documentation for more details.
 
 ## Screenshots
 
@@ -31,8 +36,10 @@ You can see the documentation in the link.
 
 ## Build
 
-If you want to build this project, you can use this command.
+If you wish to build this project, use the following command:
 
 ```bash
 flutter build windows
 ```
+
+Feel free to explore and modify the code based on your requirements.

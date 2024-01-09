@@ -13,12 +13,13 @@ class SerialController extends GetxController {
   SerialPort? _port;
   late SerialPortReader _reader;
   late StreamSubscription<Uint8List> _dataSubscription;
+  final _baudrate = 115200;
 
   /// Initializes the serial port with the default configuration.
   void initializeSerialPort() {
     _port ??= SerialPort("COM5");
     final config = SerialPortConfig();
-    config.baudRate = 115200;
+    config.baudRate = _baudrate;
     config.parity = 0;
     config.bits = 8;
     config.stopBits = 1;
@@ -43,7 +44,7 @@ class SerialController extends GetxController {
       _port!.openReadWrite();
 
       var config = _port!.config;
-      config.baudRate = 115200;
+      config.baudRate = _baudrate;
       _port!.config = config;
 
       _dataSubscription = upcomingData.listen((data) {
